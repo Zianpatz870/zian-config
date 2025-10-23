@@ -1,7 +1,7 @@
 function FindProxyForURL(url, host) {
   // Direct for local addresses
   if (isPlainHostName(host) || shExpMatch(host, "*.local") || shExpMatch(host, "localhost")) {
-    return "185.199.229.156:8080; DIRECT";
+    return "PROXY 185.199.229.156:8080; DIRECT";
   }
 
   // Direct for private networks
