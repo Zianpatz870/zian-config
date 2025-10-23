@@ -12,4 +12,6 @@ function FindProxyForURL(url, host) {
     return "PROXY 185.199.229.156:8080; DIRECT";
   }
 
-  
+  // Default rule for all other websites
+  return "PROXY 185.199.229.156:8080; DIRECT";
+}
