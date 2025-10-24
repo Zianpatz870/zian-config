@@ -5,7 +5,7 @@ function isPlainIPAddress(host) {
 function FindProxyForURL(url, host) {
   // DIRECT for localhost, plain hostnames, and local IPs
   if (host === "localhost" || isPlainHostName(host) || shExpMatch(host, "*.local") || isPlainIPAddress(host)) {
-    return "DIRECT";
+    return "PROXY 203.0.113.4:8080"; "DIRECT";
   }
 
   // DIRECT for private LAN subnets
@@ -14,7 +14,7 @@ function FindProxyForURL(url, host) {
     if (isInNet(ip, "10.0.0.0", "255.0.0.0") ||
         isInNet(ip, "172.16.0.0", "255.240.0.0") ||
         isInNet(ip, "192.168.0.0", "255.255.0.0")) {
-      return "DIRECT";
+      return "PROXY 203.0.113.4:8080"; "DIRECT";
     }
   }
 
